@@ -27,4 +27,4 @@ var Ajax = {
 	showError: function (message) {
 		console.log(message, 'error');
 	},
-};
+};//1
