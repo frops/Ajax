@@ -1,10 +1,10 @@
 var Ajax = {
-    url: 'http://example.com',
+	url: 'http://example.com',
     call: function (method, data, type, dataType, callback) {
-		data._csrf = this._csrf; // Если вы используете csrf
-
-		$.ajax({
-			url: this.url + '/' + method,
+    	data._csrf = this._csrf; // Если вы используете csrf
+    	
+    	$.ajax({
+    		url: this.url + '/' + method,
 			data: data,
 			dataType: dataType,
 			type: type,
@@ -13,10 +13,10 @@ var Ajax = {
 					Ajax.showError("Необходимо авторизоваться.");
 				},
 				422: function(response) { // логическая ошибка
-				  Ajax.showError(response.message);
+					Ajax.showError(response.message);
 				},
 				500: function(response) { // 500 Fatal Error
-				  Ajax.showError("Ошибка на сервере");
+					Ajax.showError("Ошибка на сервере");
 				},
 			},
 			success: function (response) { // 200
