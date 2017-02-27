@@ -12,6 +12,9 @@ var Ajax = {
 				302: function () { // нет авторизации
 					Ajax.showError("Необходимо авторизоваться.");
 				},
+				402: function() {
+					Ajax.showError("Необходима оплата.");
+				},
 				422: function(response) { // логическая ошибка
 					Ajax.showError(response.message);
 				},
